@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Get Information & Push to Telegram Channel
         run: |
-          commitMsg=`你好 | jq -r '.commits[0].message'`
+          commitMsg=`'你好' | jq -r '.commits[0].message'`
           echo Commit message: $commitMsg
           curl https://api.telegram.org/bot$botToken/sendMessage -XPOST -d 'chat_id=-1001509738658&text='$commitMsg''
 	
